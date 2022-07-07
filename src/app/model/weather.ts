@@ -1,12 +1,12 @@
+// creo interfaccia
+
 export interface HourlyForecast {
-    temperature: number;
+    code: number;
     date: number;
+    temperature: number;
     humidity: number;
     rain: number;
-    code: number;
     cloudCover: number;
     windSpeed: number;
-    windDiretion: number;
-
-    
+    windDirection: number;
 }

@@ -7,6 +7,9 @@ import { HourlyForecast } from 'src/app/model/weather';
   styleUrls: ['./temperature.component.scss']
 })
 export class TemperatureComponent implements OnInit {
+
+//  dichiaro input selectedtemeprature, di tipo hourlyforecast,
+//  così che possa usarlo per creare card in html
   @Input() selectedTemperature?: HourlyForecast;
 
   constructor() { }

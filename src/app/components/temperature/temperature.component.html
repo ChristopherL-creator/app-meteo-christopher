@@ -1,13 +1,14 @@
+<!-- devo assicurare a typescript che c'è selectedtemeprature -->
 <div *ngIf="selectedTemperature">
-    <div class="container"> 
-        <img src="{{forecast.code | codeIcon" alt="">
-        <span> Temperatura: {{selectedTemperature.temperature}}</span>
+    <div class="forecast">
+        <!-- mostro le proprietà di hroulyforecast in html -->
         <span>Data: {{selectedTemperature.date}}</span>
+        <img src="{{selectedTemperature.code | codeIcon}}" alt="">
+        <span> Temperatura: {{selectedTemperature.temperature}}</span>
         <span>Umidità: {{selectedTemperature.humidity}}</span>
         <span>Pioggia: {{selectedTemperature.rain}}</span>
-        <span>Incone meteo:{{selectedTemperature.code}}</span>
-        <span>Coperto: {{selectedTemperature.cloudCover}}</span>
+        <span>Copertura: {{selectedTemperature.cloudCover}}</span>
         <span>Velocità vento: {{selectedTemperature.windSpeed}}</span>
-        <span>Direzione vento: {{selectedTemperature.windDiretion}}</span>
+        <span>Direzione vento: {{selectedTemperature.windDirection}}</span>
     </div>
 </div>
