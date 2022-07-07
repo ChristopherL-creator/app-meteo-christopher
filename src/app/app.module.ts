@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { MeteoForecastComponent } from './components/meteo-forecast/meteo-forecast.component';
 import { TemperatureComponent } from './components/temperature/temperature.component';
 import { CodeIconPipe } from './components/pipes/code-icon/code-icon.pipe';
+import { AddMeasureUnitPipe } from './components/pipes/add-measure-unit/add-measure-unit.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     MeteoForecastComponent,
     TemperatureComponent,
-    CodeIconPipe
+    CodeIconPipe,
+    AddMeasureUnitPipe
   ],
   imports: [
     BrowserModule,
