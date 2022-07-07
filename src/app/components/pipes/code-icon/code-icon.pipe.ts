@@ -9,16 +9,17 @@ export class CodeIconPipe implements PipeTransform {
   transform(value: number, ...args: unknown[]): any {
     switch (value) {
       case 0:
-        return './src/assets/clear.svg'
+        return '/assets/clear.svg'
       case 1:
       case 2:
       case 3:
-        return './src/assets/cloud.svg'
+        return '/assets/cloud.svg'
       case 45:
       case 48:
-        return './src/assets/fog.svg'
-      default: './src/assets/clear.svg'
-        break;
+        return '/assets/fog.svg'
+      case 80:
+        return 'assets/rain.svg'
+      default: '/assets/clear.svg'
     }
   }
 

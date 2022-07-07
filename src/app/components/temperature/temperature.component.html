@@ -3,7 +3,7 @@
     <div class="forecast">
         <!-- mostro le proprietà di hroulyforecast in html -->
         <span>Data: {{selectedTemperature.date}}</span>
-        <img src="{{selectedTemperature.code | codeIcon}}" alt="">
+        <img class="code-img" [src]=" selectedTemperature.code | codeIcon  " alt="">
         <span> Temperatura: {{selectedTemperature.temperature}}</span>
         <span>Umidità: {{selectedTemperature.humidity}}</span>
         <span>Pioggia: {{selectedTemperature.rain}}</span>
