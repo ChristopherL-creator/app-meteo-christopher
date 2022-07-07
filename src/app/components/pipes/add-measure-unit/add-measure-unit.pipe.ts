@@ -5,8 +5,11 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class AddMeasureUnitPipe implements PipeTransform {
 
-  transform(value: unknown, ...args: unknown[]): unknown {
-    return null;
+//  per il value mi sono riferito ai valore in temperaturecomponent.html,
+//  l'extension è l'unità di misura che andrò ad aggiungere:
+  transform(value: number, extension: string): string {
+
+    return value + extension;
   }
 
 }
