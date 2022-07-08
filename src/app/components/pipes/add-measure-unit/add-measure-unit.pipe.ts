@@ -7,9 +7,9 @@ export class AddMeasureUnitPipe implements PipeTransform {
 
 //  per il value mi sono riferito ai valore in temperaturecomponent.html,
 //  l'extension è l'unità di misura che andrò ad aggiungere:
-  transform(value: number, extension: string): string {
+  transform(value: number, unit: string): string {
 
-    return value + extension;
+    return value + unit;
   }
 
 }

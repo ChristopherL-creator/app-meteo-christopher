@@ -2,13 +2,13 @@
 <div *ngIf="selectedTemperature">
     <div class="forecast">
         <!-- mostro le proprietà di hroulyforecast in html -->
-        <span>Data: {{selectedTemperature.date}}</span>
+        <span>Data: {{selectedTemperature.date}}:</span>
         <img class="code-img" [src]=" selectedTemperature.code | codeIcon  " alt="">
-        <span> Temperatura: {{selectedTemperature.temperature | addMeasureUnit: '°C'}}</span>
-        <span>Umidità: {{selectedTemperature.humidity}}</span>
-        <span>Pioggia: {{selectedTemperature.rain | addMeasureUnit: 'mm'}}</span>
-        <span>Copertura: {{selectedTemperature.cloudCover | addMeasureUnit: '%'}}</span>
-        <span>Velocità vento: {{selectedTemperature.windSpeed | addMeasureUnit: 'km/h'}}</span>
-        <span>Direzione vento: {{selectedTemperature.windDirection | addMeasureUnit: '°'}}</span>
+        <span> Temperatura: {{selectedTemperature.temperature | addMeasureUnit: '°C'}};</span>
+        <span>Umidità: {{selectedTemperature.humidity}};</span>
+        <span>Pioggia: {{selectedTemperature.rain | addMeasureUnit: 'mm'}};</span>
+        <span>Copertura: {{selectedTemperature.cloudCover | addMeasureUnit: '%'}};</span>
+        <span>Velocità vento: {{selectedTemperature.windSpeed | addMeasureUnit: 'km/h'}};</span>
+        <span>Direzione vento: {{selectedTemperature.windDirection | addMeasureUnit: '°'}}.</span>
     </div>
 </div>
