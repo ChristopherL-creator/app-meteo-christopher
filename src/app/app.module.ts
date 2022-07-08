@@ -11,6 +11,7 @@ import { AddMeasureUnitPipe } from './components/pipes/add-measure-unit/add-meas
 import { SetTwoDecimalsPipe } from './components/pipes/set-two-decimals/set-two-decimals.pipe';
 import { CitiesComponent } from './components/cities/cities.component';
 import { FormsModule } from '@angular/forms';
+import { CityDetailComponent } from './components/city-detail/city-detail.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FormsModule } from '@angular/forms';
     CodeIconPipe,
     AddMeasureUnitPipe,
     SetTwoDecimalsPipe,
-    CitiesComponent
+    CitiesComponent,
+    CityDetailComponent
   ],
   imports: [
     BrowserModule,

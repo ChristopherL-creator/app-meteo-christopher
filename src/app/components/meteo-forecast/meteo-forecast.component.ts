@@ -19,18 +19,26 @@ export class MeteoForecastComponent implements OnInit {
   constructor(private meteoS: MeteoService ) { }
 
   ngOnInit(): void {
-    this.getWeather()
+    this.getWeather() 
+    // if (condition) {
+      
+    // }
   }
 
 //  creo funzione per importarmi i dati da getweather in meteo
 //  service, che mi resistuirà un observable di hourlyforecast,
 //  a cui mi sottoscrivo per qualsiasi cambiamento:
-  getWeather(){
+  getWeather(){ 
+    // const lat = '0'; 
+    // const lng = '0';
+    // this.meteoS.getMeteo(lat, lng).subscribe({
+    //   next: (data) => this.forecastArray = data,
+    //   error: err => console.log(err)
+    // })
     this.meteoS.getWeather().subscribe({
-      next: m => this.forecastArray = m,
+      next: resp => this.forecastArray = resp,
       error: err => console.log(err)
     })
   }
-
 
 }

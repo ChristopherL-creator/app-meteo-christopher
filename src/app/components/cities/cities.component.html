@@ -1,4 +1,12 @@
-<div>
-    <input type="text" (change)="searchCities()" [(ngModel)]="cityName">
-    <button>Search</button>
+<div class="container">
+    <input #cityInput [(ngModel)]="cityName" type="text" >
+    <button (click)="searchCities()">Search</button>
+    <div class="cities-container">
+        <div  *ngFor="let city of cities" routerLink="/search/{{city.latitude}}@{{city.longitude}}"> 
+            <span>{{city.name}}</span>
+            <span>{{city.country}}</span>
+            <span>{{city.latitude}}</span>
+            <span>{{city.longitude}}</span>
+        </div>
+    </div>
 </div>

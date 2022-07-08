@@ -10,7 +10,7 @@ import { HourlyForecast } from '../../model/weather';
   providedIn: 'root'
 })
 export class MeteoService {
-
+  private readonly BASE_URL_CITY = "https://api.open-meteo.com/v1/forecast?&hourly=temperature_2m,relativehumidity_2m,rain,weathercode,cloudcover,windspeed_10m,winddirection_10m"
 //  iniflo url api in variabile private readoly:
   private readonly BASE_URL = "https://api.open-meteo.com/v1/forecast?latitude=41.8955&longitude=12.4823&hourly=temperature_2m,relativehumidity_2m,rain,weathercode,cloudcover,windspeed_10m,winddirection_10m&timezone=Europe%2FBerlin"
 
@@ -84,6 +84,13 @@ export class MeteoService {
     // return data.hourly.time.map((time: string, index: number) => {
     //   return {date: time, temperature: data.hourly.temperature_2m[index]}
     // })
+  } 
+
+  getMeteo(lat: string, lng: string){
+    const url = this.BASE_URL_CITY + '&latitude=' + lat + '&longitud=' + lng;
+    return this.http.get<HourlyForecast[]>(this.BASE_URL_CITY).pipe(
+      map(data => this.parserMeteoData(data))
+    )
   }
 
 }
