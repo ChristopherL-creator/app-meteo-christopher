@@ -1,7 +1,7 @@
 import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { HourlyForecast } from 'src/app/model/weather';
-import { MeteoService } from 'src/app/services/meteo.service';
+import { MeteoService } from 'src/app/services/meteo/meteo.service';
 
 @Component({
   selector: 'app-meteo-forecast',

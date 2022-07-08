@@ -8,6 +8,9 @@ import { MeteoForecastComponent } from './components/meteo-forecast/meteo-foreca
 import { TemperatureComponent } from './components/temperature/temperature.component';
 import { CodeIconPipe } from './components/pipes/code-icon/code-icon.pipe';
 import { AddMeasureUnitPipe } from './components/pipes/add-measure-unit/add-measure-unit.pipe';
+import { SetTwoDecimalsPipe } from './components/pipes/set-two-decimals/set-two-decimals.pipe';
+import { CitiesComponent } from './components/cities/cities.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,12 +18,15 @@ import { AddMeasureUnitPipe } from './components/pipes/add-measure-unit/add-meas
     MeteoForecastComponent,
     TemperatureComponent,
     CodeIconPipe,
-    AddMeasureUnitPipe
+    AddMeasureUnitPipe,
+    SetTwoDecimalsPipe,
+    CitiesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

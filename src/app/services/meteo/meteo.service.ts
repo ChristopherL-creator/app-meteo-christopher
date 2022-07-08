@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Data } from '@angular/router';
 import { map, Observable, retry } from 'rxjs';
-import { HourlyForecast } from '../model/weather';
+import { HourlyForecast } from '../../model/weather';
 
 @Injectable({
   providedIn: 'root'
@@ -39,7 +39,8 @@ export class MeteoService {
     const rainArray = data.hourly.rain;
     const cloudCoverArray = data.hourly.cloudcover;
     const windSpeedArray = data.hourly.windspeed_10m;
-    const windDirectionArray = data.hourly.winddirection_10m
+    const windDirectionArray = data.hourly.winddirection_10m;
+    // const pressureArray = data.hourly.pressure
 
 //  inizializzo array vuoto di hourlyforecast in variabile forecastarray
     const forecastArray: HourlyForecast[] = []
@@ -56,6 +57,7 @@ export class MeteoService {
       const cloudCoverPerIndex = cloudCoverArray[i];
       const windSpeedPerIndex = windSpeedArray[i];
       const windDirectionPerIndex = windDirectionArray[i];
+      // const pressurePerIndex = pressureArray[i]
 
 //  creo variabile singolo forecast, in cui inizializzo l'interfaccia
 //  hourlyforecast: dichiarando di nuovo proprietà, a cui assegno
@@ -68,7 +70,8 @@ export class MeteoService {
                                         rain: rainPerIndex,
                                         cloudCover: cloudCoverPerIndex,
                                         windSpeed: windSpeedPerIndex,
-                                        windDirection: windDirectionPerIndex
+                                        windDirection: windDirectionPerIndex,
+                                        // pressure: pressurePerIndex
                                       }
 
 //  riempo forecastArray con tutti i forecast:
