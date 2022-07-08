@@ -1,12 +1,12 @@
-<div class="container">
+<div class="search-container">
     <input #cityInput [(ngModel)]="cityName" type="text" >
     <button (click)="searchCities()">Search</button>
-    <div class="cities-container">
-        <div  *ngFor="let city of cities" routerLink="/search/{{city.latitude}}@{{city.longitude}}"> 
-            <span>{{city.name}}</span>
+    <div class="found-cities-container">
+        <div class="found-cities" *ngFor="let city of cities" routerLink="/search/{{city.latitude}}@{{city.longitude}}">
+            <span>{{city.name}}, </span>
             <span>{{city.country}}</span>
-            <span>{{city.latitude}}</span>
-            <span>{{city.longitude}}</span>
+            <!-- <span>{{city.latitude}}</span>
+            <span>{{city.longitude}}</span> -->
         </div>
     </div>
 </div>
