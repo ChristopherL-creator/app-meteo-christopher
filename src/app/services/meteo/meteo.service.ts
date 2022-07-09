@@ -10,9 +10,9 @@ import { HourlyForecast } from '../../model/weather';
   providedIn: 'root'
 })
 export class MeteoService {
-  private readonly BASE_URL_CITY = "https://api.open-meteo.com/v1/forecast?&hourly=temperature_2m,relativehumidity_2m,rain,weathercode,cloudcover,windspeed_10m,winddirection_10m"
+  private readonly BASE_URL_CITY = "https://api.open-meteo.com/v1/forecast?&hourly=temperature_2m,relativehumidity_2m,surface_pressure,rain,weathercode,cloudcover,windspeed_10m,winddirection_10m&current_weather=true"
 //  iniflo url api in variabile private readoly:
-  private readonly BASE_URL = "https://api.open-meteo.com/v1/forecast?latitude=41.8955&longitude=12.4823&hourly=temperature_2m,relativehumidity_2m,rain,weathercode,cloudcover,windspeed_10m,winddirection_10m&timezone=Europe%2FBerlin"
+  private readonly BASE_URL = "https://api.open-meteo.com/v1/forecast?latitude=41.8955&longitude=12.4823&hourly=temperature_2m,relativehumidity_2m,surface_pressure,rain,weathercode,cloudcover,windspeed_10m,winddirection_10m&current_weather=true"
 
 // infilo httpclient in constructor, per poter fare chiamate get:
   constructor(private http: HttpClient ) { }
