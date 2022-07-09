@@ -84,11 +84,11 @@ export class MeteoService {
     // return data.hourly.time.map((time: string, index: number) => {
     //   return {date: time, temperature: data.hourly.temperature_2m[index]}
     // })
-  } 
+  }
 
   getMeteo(lat: string, lng: string){
-    const url = this.BASE_URL_CITY + '&latitude=' + lat + '&longitud=' + lng;
-    return this.http.get<HourlyForecast[]>(this.BASE_URL_CITY).pipe(
+    const url = this.BASE_URL_CITY + '&latitude=' + lat + '&longitude=' + lng;
+    return this.http.get<HourlyForecast[]>(url).pipe(
       map(data => this.parserMeteoData(data))
     )
   }
