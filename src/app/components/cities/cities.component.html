@@ -1,0 +1,10 @@
+<div class="search-container">
+    <input #cityInput type="text" >
+    <button (click)="getCities(cityInput.value)">Search</button>
+    <div class="found-cities-container">
+        <div class="found-cities" *ngFor="let city of cities" routerLink="/meteo/{{city.latitude}}@{{city.longitude}}">
+            <span>{{city.name}}, </span>
+            <span>{{city.country}}</span>
+        </div>
+    </div>
+</div>
