@@ -11,10 +11,8 @@ import { HourlyForecast } from '../../model/weather';
 })
 export class MeteoService {
 
-// 
-  private readonly BASE_URL_CITY = "https://api.open-meteo.com/v1/forecast?&hourly=temperature_2m,relativehumidity_2m,surface_pressure,rain,weathercode,cloudcover,windspeed_10m,winddirection_10m&current_weather=true"
 //  iniflo url api in variabile private readoly:
-  private readonly BASE_URL = "https://api.open-meteo.com/v1/forecast?latitude=41.8955&longitude=12.4823&hourly=temperature_2m,relativehumidity_2m,surface_pressure,rain,weathercode,cloudcover,windspeed_10m,winddirection_10m&current_weather=true"
+private readonly BASE_URL_CITY = "https://api.open-meteo.com/v1/forecast?&hourly=temperature_2m,relativehumidity_2m,surface_pressure,rain,weathercode,cloudcover,windspeed_10m,winddirection_10m&current_weather=true"
 
 // infilo httpclient in constructor, per poter fare chiamate get:
   constructor(private http: HttpClient ) { }
@@ -23,11 +21,12 @@ export class MeteoService {
 //  organizzo in base ad array di interfaccie hourlyfoercast, e con
 //  pipe li infilo in variabile data. che mappo con parsermeteodata,
 // a cui passo lo stesso data
-  getWeather() {
-    return this.http.get<HourlyForecast[]>(this.BASE_URL).pipe(
-      map(data => this.parserMeteoData(data))
-      );
-    }
+getMeteo(lat: string, lng: string){
+  const url = this.BASE_URL_CITY + '&latitude=' + lat + '&longitude=' + lng;
+  return this.http.get<HourlyForecast[]>(url).pipe(
+    map(data => this.parserMeteoData(data))
+  )
+}
 
 //  funzione a cui passo data, con il response della get(i dati dell'api)
   parserMeteoData(data: any){
@@ -88,11 +87,6 @@ export class MeteoService {
     // })
   }
 
-  getMeteo(lat: string, lng: string){
-    const url = this.BASE_URL_CITY + '&latitude=' + lat + '&longitude=' + lng;
-    return this.http.get<HourlyForecast[]>(url).pipe(
-      map(data => this.parserMeteoData(data))
-    )
-  }
+
 
 }
