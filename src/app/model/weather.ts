@@ -9,5 +9,5 @@ export interface HourlyForecast {
     cloudCover: number;
     windSpeed: number;
     windDirection: number;
-    // pressure: number;
+    pressure: number;
 }

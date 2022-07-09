@@ -10,6 +10,8 @@ import { HourlyForecast } from '../../model/weather';
   providedIn: 'root'
 })
 export class MeteoService {
+
+// 
   private readonly BASE_URL_CITY = "https://api.open-meteo.com/v1/forecast?&hourly=temperature_2m,relativehumidity_2m,surface_pressure,rain,weathercode,cloudcover,windspeed_10m,winddirection_10m&current_weather=true"
 //  iniflo url api in variabile private readoly:
   private readonly BASE_URL = "https://api.open-meteo.com/v1/forecast?latitude=41.8955&longitude=12.4823&hourly=temperature_2m,relativehumidity_2m,surface_pressure,rain,weathercode,cloudcover,windspeed_10m,winddirection_10m&current_weather=true"
@@ -40,7 +42,7 @@ export class MeteoService {
     const cloudCoverArray = data.hourly.cloudcover;
     const windSpeedArray = data.hourly.windspeed_10m;
     const windDirectionArray = data.hourly.winddirection_10m;
-    // const pressureArray = data.hourly.pressure
+    const pressureArray = data.hourly.surface_pressure
 
 //  inizializzo array vuoto di hourlyforecast in variabile forecastarray
     const forecastArray: HourlyForecast[] = []
@@ -57,7 +59,7 @@ export class MeteoService {
       const cloudCoverPerIndex = cloudCoverArray[i];
       const windSpeedPerIndex = windSpeedArray[i];
       const windDirectionPerIndex = windDirectionArray[i];
-      // const pressurePerIndex = pressureArray[i]
+      const pressurePerIndex = pressureArray[i]
 
 //  creo variabile singolo forecast, in cui inizializzo l'interfaccia
 //  hourlyforecast: dichiarando di nuovo proprietà, a cui assegno
@@ -71,7 +73,7 @@ export class MeteoService {
                                         cloudCover: cloudCoverPerIndex,
                                         windSpeed: windSpeedPerIndex,
                                         windDirection: windDirectionPerIndex,
-                                        // pressure: pressurePerIndex
+                                        pressure: pressurePerIndex
                                       }
 
 //  riempo forecastArray con tutti i forecast:
