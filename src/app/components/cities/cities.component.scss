@@ -3,7 +3,9 @@
   display: flex;
   flex-direction: column;
   border: 1px solid;
-  max-width: 230px;
+  max-width: 225px; 
+  border-bottom-right-radius: 12px; 
+  border-bottom-left-radius: 12px;
 }
 
 .found-cities{

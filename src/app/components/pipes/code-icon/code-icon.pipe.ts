@@ -43,7 +43,7 @@ export class CodeIconPipe implements PipeTransform {
       case 86:
         return '/assets/snow-fall.svg'
       case 95:
-        return '/assets/thunderstom.svg'
+        return '/assets/thunderstorm.svg'
       case 96:
       case 99:
         return '/assets/thunderstom.svg'
