@@ -46,8 +46,9 @@ export class CodeIconPipe implements PipeTransform {
         return '/assets/thunderstorm.svg'
       case 96:
       case 99:
-        return '/assets/thunderstom.svg'
-      default: '/assets/clear.svg'
+        return '/assets/thunderstorm.svg'
+      default: 
+        return '/assets/clear.svg'
     }
   }
 
